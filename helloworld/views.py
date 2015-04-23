@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.template import loader
 
 def helloworld(request):
-    return HttpResponse("Hello World!")
+    template = loader.get_template('helloworld/helloworld.html')
+    return HttpResponse(template.render())
