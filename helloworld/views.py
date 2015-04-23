@@ -4,4 +4,5 @@ from django.template import loader, RequestContext
 
 
 def helloworld(request, name):
-    return render(request, 'hello_world/hello_world.html', {'name':name})
+    context = {'name':name}
+    return render(request, 'hello_world/name.html', context)

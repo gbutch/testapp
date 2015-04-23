@@ -1,0 +1,32 @@
+.header {
+ height: 33.3%;
+ width: 100%;
+ background: blue;
+}
+
+.footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 33.3%;
+	width: 100%;
+	background: blue;
+}
+
+.name {
+	font-size:7em;
+	font-family:Helvetica;
+}
+div.name-container {
+    height: 33.3%;
+    position: relative
+}
+
+div.name-container .name {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
