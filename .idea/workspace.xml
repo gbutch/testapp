@@ -29,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/helloworld/templates/hello_world/name.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.14240506" vertical-offset="0" max-vertical-offset="632">
-              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+              <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -547,7 +547,7 @@
     <entry file="file://$PROJECT_DIR$/helloworld/templates/hello_world/name.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14240506" vertical-offset="0" max-vertical-offset="632">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
           <folding />
         </state>
       </provider>
