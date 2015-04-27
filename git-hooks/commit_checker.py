@@ -13,25 +13,26 @@ else:
 message_file = sys.argv[1]
 
 
-def check_format_rules(line_number, line):
+def check_format_rules_for_line_1(line_number, line):
     def format_match(string):
         is_it_valid = re.match('^[Ss]tory[:;-][0-9]{1,4}[^.]+', string)
         if is_it_valid == None:
             return False
         else:
             return True
+    real_line_number = line_number + 1
+    if not line.startswith('#'):
+        if not format_match(line):
+            return "Error 'Line %d': Commit message must start with 'story:{number}'" \
+                   % (real_line_number)
+    return False
 
+def generic_line_format_checks(line_number, line):
     real_line_number = line_number + 1
     if not line.startswith('#'):
         if len(line) > 50:
-            return "Error %d: First line should be less than 50 characters " \
+            return "Error %d: Line should be less than 50 characters " \
                    "in length." % (real_line_number,)
-        if not format_match(line):
-            return "Error %d: Commit message must start with 'story:{number}'" \
-                   % (real_line_number)
-
-    return False
-
 
 while True:
     commit_msg = list()
@@ -40,10 +41,14 @@ while True:
         for line_number, line in enumerate(commit_fd):
             stripped_line = line.strip()
             commit_msg.append(line)
-            e = check_format_rules(line_number, stripped_line)
+            if line_number == 0:
+                e = check_format_rules_for_line_1(line_number, stripped_line)
+            if line_number != 0:
+                e = generic_line_format_checks(line_number, stripped_line)
             if e:
                 errors.append(e)
     if errors:
+
         with open(message_file, 'w') as commit_fd:
             commit_fd.write('%s\n' % '# GIT COMMIT MESSAGE FORMAT ERRORS:')
             for error in errors:
