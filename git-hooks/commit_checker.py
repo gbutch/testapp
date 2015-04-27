@@ -34,7 +34,7 @@ def check_format_rules(line_number, line):
 
 
 while True:
-    commit_msg = []
+    commit_msg = list()
     errors = list()
     with open(message_file) as commit_fd:
         for line_number, line in enumerate(commit_fd):
@@ -45,7 +45,7 @@ while True:
                 errors.append(e)
     if errors:
         with open(message_file, 'w') as commit_fd:
-            commit_fd.write('%s\n' % '# GIT COMMIT MESSAGE FORMAT ERRORS:', \n, commit_fd)
+            commit_fd.write('%s\n' % '# GIT COMMIT MESSAGE FORMAT ERRORS:')
             for error in errors:
                 commit_fd.write('#    %s\n' % (error,))
             for line in commit_msg:
