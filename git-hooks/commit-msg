@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Running commit-msg hook"
+echo $1
+exec < /dev/tty
+.git/hooks/commit_checker.py $1
+
