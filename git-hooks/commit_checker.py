@@ -48,8 +48,8 @@ while True:
             if e:
                 errors.append(e)
     if errors:
-
         with open(message_file, 'w') as commit_fd:
+
             commit_fd.write('%s\n' % '# GIT COMMIT MESSAGE FORMAT ERRORS:')
             for error in errors:
                 commit_fd.write('#    %s\n' % (error,))
