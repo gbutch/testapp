@@ -1,0 +1,9 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'qa-blog/blog-style.css' %}"/>
+<div class="header"></div>
+<div class="blog-container">
+    <div class="sidebar"></div>
+    <div class="content-container">
+        {% block content %}{% endblock %}
+    </div>
+</div>

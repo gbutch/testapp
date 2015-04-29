@@ -1,0 +1,59 @@
+{% extends 'qa-blog/base.html' %}
+{% load staticfiles %}
+{% block content%}
+<p class="title">Simulated Annealing - A mathematical heurestic for executing exploratory testing</p>
+<p>Exploratory Testing can be hard to justify at the best of times. Proving the value of a process which may give none
+    is a fruitless task. The principle of consistently delivering value throughout the development cycle would appear
+    contradictory to such a process. However, just like the explorers of old, treasures are there to be discovered if
+    you explore in the correct manner.</p>
+<p class="sub-title">Simulated Annealing – A heuristic for exploratory success</p>
+<p>During my initial forays into the world of a ThoughtWorks QA, I spread my net wide in the search for gobbets of
+    knowledge and advice. Stumbling on a video by James Bach, he talks about a process called simulating annealing, “a
+    mathematically based method of exploratory testing”. I get maths, I get testing. How exploration fitted into that
+    equation was questionable. So I started down the rabbit hole and 1 year later of learning and doing, the pieces
+    finally fitted together.</p>
+
+<p>I won't fully explain the process or the maths behind simulated annealing. If you would like to learn more about it,
+    Richard Buckland provides a wonderfully outlined explanation with plenty of humorous examples.</p>
+
+<p>Simulated Annealing can be neatly translated as iterative exploratory testing. At first we execute tests at random,
+    avoiding selection bias in the tests we execute. The feedback from our initial iteration of testing feeds into the
+    second and with each iteration the randomness of our selection decreases</p>
+<p class="sub-title">Applying Simulated Annealing to a problem space</p>
+<p>In practice, simulated annealing provides a 'good enough' solution to a problem which is too big to brute force. The
+    example below will help illustrate this point.</p>
+<p>Below is a map with 19 tiles. Each tile represents a city with a population between 1-10 million people. Our goal is
+    to find the tile with the highest population. However, we only have the resources to test 8 tiles.</p>
+<div class="blog-image"><img class="map" src="{% static 'qa-blog/images/map1.png' %}"></div>
+<p>We could randomly test 8 tiles, and have a 52% chance that we have found the most populated tile. Alternatively, we
+    can apply simulated annealing and progressively improve to find the highest tile.</p>
+<p>First we test a random tile. As we conduct our test, we can see into other parts of the map and gather an approximate
+    of the population in the adjacent tiles. Much like a tester interacting with any software system, doing one activity
+    provides insight to adjoining parts.</p>
+<div class="blog-image"><img class="map" src="{% static 'qa-blog/images/map2.png' %}"></div>
+<p>Our initial test has revealed some information that is useful. However, we still don't have good enough knowledge of
+    the rest of the map to start focussing our tests on any particular area. We conduct 4 more random tests to provide a
+    greater impression of the overall map.</p>
+<div class="blog-image"><img class="map" src="{% static 'qa-blog/images/map3.png' %}"></div>
+<p>Now we have at least an estimate of 89% of the map. With this knowledge we can start targeting specific areas of the
+    map. In this case, I'm now going to use 4 more tests to target areas that are 7 or higher.</p>
+<p>
+<div class="blog-image"><img class="map" src="{% static 'qa-blog/images/map4.png' %}"></div></p>
+<p>Having used all 8 tests, I have discovered that the top tile has a population of nine million. Given my knowledge of
+    the rest of the map. I can reasonably infer that the top tile is likely to be the most populous on the map. While
+    another test might prove that another tile has the highest population, I've come up with the best possible solution
+    given my constraints.</p>
+<p class="sub-title">Intelligence Gatherers</p>
+<p>To borrow a famously convoluted quote from Donald Rumsfeld referring to the failure of the US intelligence services
+    to find Weapons of Mass Destruction (WMDs) in Iraq:</p>
+<p class="quote">“there are known knowns; there are things we know we know. We also know there are known unknowns; that
+    is to say we know there are some things we do not know. But there are also unknown unknowns – the ones we don't know
+    we don't know.”</p>
+<p>Exploratory testing is exactly that. When a test is executed, a QA is gathering intelligence. Discovering both known
+    issues, unknown issues, but also stumbling upon areas which may require further investigation. The less unknown
+    unknowns the less likely a project is to run into future problems.</p>
+<p>Using this approach, tests that both find and miss hidden bugs provide the QA valuable information for further
+    iterations of testing. Each test has the ability to demystify adjoining parts. </p>
+<p></p>
+<p></p>
+{% endblock%}

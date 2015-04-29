@@ -1,0 +1,77 @@
+.header {
+ height: 10%;
+ width: 100%;
+ background: blue;
+ left: 0;
+ top: 0;
+ position: absolute;
+}
+
+.name {
+	font-size:7em;
+	font-family:Helvetica;
+}
+div.name-container {
+    height: 33.3%;
+    position: relative
+}
+
+.content-container {
+	left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    width: 60%;
+    top: 0;
+}
+
+.title {
+	text-align: center;
+	font-size: 80px;
+}
+
+.sub-title {
+	text-decoration: underline;
+	font-style: oblique;
+	font-size: 18px;
+}
+.blog-image {
+ align-self: center;
+ height: 300px;
+}
+
+.sidebar {
+	width: 19%;
+	height: 80%
+
+}
+
+.blog-container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 10%;
+	left: 0;
+}
+
+.map {
+    height: auto;
+    left: 50%;
+    max-height: 300px;
+    max-width: 300px;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    width: auto;
+}
+
+body {
+	font-family: "Open Sans","Microsoft YaHei","Hiragino Sans GB","Hiragino Sans GB W3","微软雅黑","Helvetica Neue",Arial,sans-serif;
+}
+
+div.name-container .name {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
