@@ -1,7 +1,16 @@
 .header {
- height: 10%;
- width: 100%;
+ height: 15%;
+ width: 90%;
  background: blue;
+ left: 20%;
+ top: 0;
+ position: absolute;
+}
+
+.header-box {
+ height: 15%;
+ width: 20%;
+ background: grey;
  left: 0;
  top: 0;
  position: absolute;
@@ -40,8 +49,9 @@ div.name-container {
 }
 
 .sidebar {
-	width: 19%;
-	height: 80%
+	width: 20%;
+	height: 80%;
+	background-color: orange
 
 }
 
@@ -49,7 +59,7 @@ div.name-container {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	top: 10%;
+	top: 15%;
 	left: 0;
 }
 
